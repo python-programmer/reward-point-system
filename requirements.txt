@@ -1,0 +1,5 @@
+django==1.11
+djangorestframework==3.3.7
+pillow==5.0.0
+jsonfield==2.0.2
+psycopg2==2.7.3.2
