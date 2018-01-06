@@ -3,3 +3,5 @@ djangorestframework==3.3.7
 pillow==5.0.0
 jsonfield==2.0.2
 psycopg2==2.7.3.2
+djangorestframework-jwt==1.11.0
+requests==2.18.4

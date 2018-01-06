@@ -5,9 +5,13 @@ from django.http import Http404
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+from auth.permissions import IsSSOAuthenticated
+from .custom_throttling import PerUserRateThrottle
 
 
 class OrderList(APIView):
+    permission_classes = (IsSSOAuthenticated,)
+    throttle_classes = (PerUserRateThrottle,)
 
     def get(self, request, format=None):
         orders = Order.objects.all()
@@ -18,12 +22,14 @@ class OrderList(APIView):
         order = {'item': json.dumps(request.data)}
         serializer = OrderSerializer(data=order)
         if serializer.is_valid():
-            serializer.save(user_name='hadi')
+            serializer.save(user_name=request.session.get('username'))
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class OrderDetail(APIView):
+    permission_classes = (IsSSOAuthenticated,)
+    throttle_classes = (PerUserRateThrottle,)
 
     def get_object(self, pk):
         try:
