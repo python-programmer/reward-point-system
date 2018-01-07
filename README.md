@@ -130,7 +130,9 @@ $ celery -A uber_tasks worker --loglevel=info -Q uber
 
 ## API
 For every operation, you need a token
+
 first of all you must register a user
+
 
 ### SSO API
 
@@ -261,5 +263,10 @@ Method: GET
 
 Authorization: JWT <token>
   
+## Throttling
 
+Each user can only do 5 unsafe method operation(Add, Edit, Delete)  per minute
 
+## Logging all transactions
+
+All transactions are logged
