@@ -46,3 +46,85 @@ In the root directory of the project, run below command in the terminal:
 ```
 pip install -r requirements.txt
 ```
+
+## Projects Setup
+
+### SSOServer
+
+A Simple SSO server that handles Authentication and Authorization (JWT)
+
+we need to create our tables in the database, to do that, run the following command:
+
+```
+$ python manage.py migrate
+```
+
+start the development server:
+
+```
+$ python manage.py runserver
+```
+
+finally running the Celery worker server(adding dynamic data to the order items in other services):
+```
+$ celery -A admin_tasks worker --loglevel=info
+```
+
+### Other Projects
+
+The McDonald and the Uber Project is the same project with different name (for demonstration purposes only):
+
+#### McDonald
+postgres requirement: 
+
+> user=python_user
+
+> password=^uCd*r7-M$
+
+> database=mcdonald_db
+
+create the tables with:
+
+```
+$ python manage.py migrate
+```
+
+start the development server:
+
+```
+$ python manage.py runserver
+```
+
+finally running the Celery worker server(adding dynamic data to the order items in other services):
+the celery worker just handles tasks in the **mcdonald queue**
+```
+$ celery -A mcdonald_tasks worker --loglevel=info -Q mcdonald
+```
+
+#### Uber
+postgres requirement: 
+
+> user=python_user
+
+> password=^uCd*r7-M$
+
+> database=uber_db
+
+create the tables with:
+
+```
+$ python manage.py migrate
+```
+
+start the development server:
+
+```
+$ python manage.py runserver
+```
+
+finally running the Celery worker server(adding dynamic data to the order items in other services):
+the celery worker just handles tasks in the **uber queue**
+```
+$ celery -A uber_tasks worker --loglevel=info -Q uber
+```
+
