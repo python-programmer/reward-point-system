@@ -128,3 +128,138 @@ the celery worker just handles tasks in the **uber queue**
 $ celery -A uber_tasks worker --loglevel=info -Q uber
 ```
 
+## API
+For every operation, you need a token
+first of all you must register a user
+
+### SSO API
+
+**SignUp**
+
+http://localhost:8000/sign-up
+
+Method: POST
+
+data: {
+
+  'username': 'any-name',
+  
+  'password': 'password'
+  
+}
+
+
+**SignIn**
+
+get a token
+
+http://localhost:8000/api-token-auth
+
+Method: POST
+
+data: {
+
+  'username': 'any-name',
+  
+  'password': 'password'
+  
+}
+
+
+**Get All Valid Clients**
+
+uber or mcdonald
+
+http://127.0.0.1:8000/clients/
+
+Method: GET
+
+Authorization: JWT <token>
+
+
+**Add or Update order items attributes(Admin panel)**
+
+add or update order items attribute in other services(uber or mcdonald)
+
+http://127.0.0.1:8000/clients/
+
+Method: POST
+
+Authorization: JWT <token>
+  
+data: {
+
+  client: uber|mcdonald,
+  
+  key1: value1,
+  
+  key2: value2,
+  
+  ...
+  
+}
+  
+  
+### Other services
+
+**Post data to a service**
+
+http://127.0.0.1:8002/api/orders/
+
+Method: POST
+
+Authorization: JWT <token>
+  
+data:{
+
+  key1: value1,
+  
+  key2: value2,
+  
+  key3: value3,
+  
+  ...
+  
+}
+
+
+**Update a record**
+
+http://127.0.0.1:8002/api/orders/
+
+Method: PUT
+
+Authorization: JWT <token>
+  
+data:{
+
+  key1: value1,
+  
+  key2: value2,
+  
+  key3: value3,
+  
+  ...
+  
+}
+  
+  
+**Delete a record**
+
+http://127.0.0.1:8002/api/orders/id
+
+Method: DELETE
+
+Authorization: JWT <token>
+  
+  
+**Get a record**
+
+http://127.0.0.1:8002/api/orders/id
+
+Method: GET
+
+Authorization: JWT <token>
+  
+
+
