@@ -5,3 +5,5 @@ jsonfield==2.0.2
 psycopg2==2.7.3.2
 djangorestframework-jwt==1.11.0
 requests==2.18.4
+django-redis==4.8.0
+celery==4.1.0
