@@ -138,7 +138,7 @@ first of all you must register a user
 
 **SignUp**
 
-http://localhost:8000/sign-up
+http://127.0.0.1:8000/sign-up
 
 Method: POST
 
@@ -156,7 +156,7 @@ data: {
 
 get a token
 
-http://localhost:8000/api-token-auth
+http://127.0.0.1:8000/api-token-auth
 
 Method: POST
 
