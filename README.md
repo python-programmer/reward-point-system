@@ -149,6 +149,7 @@ data: {
   'password': 'password'
   
 }
+
 -------
 
 **SignIn**
@@ -166,6 +167,7 @@ data: {
   'password': 'password'
   
 }
+
 -------
 
 **Get All Valid Clients**
@@ -178,6 +180,7 @@ Method: GET
 
 Authorization: JWT _token_
 
+-------
 
 **Add or Update order items attributes(Admin panel)**
 
@@ -187,7 +190,7 @@ http://127.0.0.1:8000/clients/
 
 Method: POST
 
-Authorization: JWT <token>
+Authorization: JWT _token_
   
 data: {
 
@@ -200,7 +203,8 @@ data: {
   ...
   
 }
-  
+
+-------
   
 ### Other services
 
@@ -210,7 +214,7 @@ http://127.0.0.1:8002/api/orders/
 
 Method: POST
 
-Authorization: JWT <token>
+Authorization: JWT _token_
   
 data:{
 
@@ -224,6 +228,7 @@ data:{
   
 }
 
+-------
 
 **Update a record**
 
@@ -231,7 +236,7 @@ http://127.0.0.1:8002/api/orders/
 
 Method: PUT
 
-Authorization: JWT <token>
+Authorization: JWT _token_
   
 data:{
 
@@ -245,6 +250,7 @@ data:{
   
 }
   
+-------
   
 **Delete a record**
 
@@ -252,16 +258,19 @@ http://127.0.0.1:8002/api/orders/id
 
 Method: DELETE
 
-Authorization: JWT <token>
-  
-  
+Authorization: JWT _token_
+
+-------
+ 
 **Get a record**
 
 http://127.0.0.1:8002/api/orders/id
 
 Method: GET
 
-Authorization: JWT <token>
+Authorization: JWT _token_
+
+-------
   
 ## Throttling
 
