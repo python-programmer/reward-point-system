@@ -8,4 +8,4 @@ Microservices with dynamic data and sso
 * [RabbitMQ 3.6+](https://www.rabbitmq.com/)
 * [Celery](http://www.celeryproject.org/)
 * [Redis](https://redis.io/)
-* [django-rest-framework-jwt](https://getblimp.github.io/django-rest-framework-jwt/)
+* [Django-REST-Framework-JWT](https://getblimp.github.io/django-rest-framework-jwt/)
