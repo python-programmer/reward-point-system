@@ -1,5 +1,5 @@
 # Reward/Point system with Microservices in Python
-Microservices with dynamic data and sso
+Simple Microservices with django rest framework, Celery and RabbitMQ
 
 ## Requirements
 * [Python 3.4+](https://www.python.org/downloads/release/python-2712/)
@@ -9,3 +9,4 @@ Microservices with dynamic data and sso
 * [Celery](http://www.celeryproject.org/)
 * [Redis](https://redis.io/)
 * [Django-REST-Framework-JWT](https://getblimp.github.io/django-rest-framework-jwt/)
+
