@@ -89,10 +89,10 @@ create the tables with:
 $ python manage.py migrate
 ```
 
-start the development server:
+start the development server(port=8001):
 
 ```
-$ python manage.py runserver
+$ python manage.py runserver 8001
 ```
 
 finally running the Celery worker server(adding dynamic data to the order items in other services):
@@ -116,10 +116,10 @@ create the tables with:
 $ python manage.py migrate
 ```
 
-start the development server:
+start the development server(port=8002):
 
 ```
-$ python manage.py runserver
+$ python manage.py runserver 8002
 ```
 
 finally running the Celery worker server(adding dynamic data to the order items in other services):
