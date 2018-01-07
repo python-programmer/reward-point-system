@@ -149,7 +149,7 @@ data: {
   'password': 'password'
   
 }
-
+-------
 
 **SignIn**
 
@@ -166,7 +166,7 @@ data: {
   'password': 'password'
   
 }
-
+-------
 
 **Get All Valid Clients**
 
@@ -176,7 +176,7 @@ http://127.0.0.1:8000/clients/
 
 Method: GET
 
-Authorization: JWT <token>
+Authorization: JWT _token_
 
 
 **Add or Update order items attributes(Admin panel)**
