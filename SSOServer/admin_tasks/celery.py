@@ -2,9 +2,7 @@ from __future__ import absolute_import, unicode_literals
 from celery import Celery
 
 app = Celery('admin_tasks',
-             broker='amqp://',
-             backend='amqp://',
-             include=['admin_tasks.tasks'])
+             broker='amqp://localhost')
 
 app.conf.update(
     result_expires=3600,

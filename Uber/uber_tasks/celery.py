@@ -2,7 +2,7 @@ from __future__ import absolute_import, unicode_literals
 from celery import Celery
 
 app = Celery('uber_tasks',
-             broker='amqp://',
+             broker='amqp://localhost',
              include=['uber_tasks.tasks'])
 
 app.conf.update(
