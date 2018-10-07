@@ -1,4 +1,4 @@
-django==1.11
+django==1.11.15 
 djangorestframework==3.3.7
 pillow==5.0.0
 jsonfield==2.0.2
